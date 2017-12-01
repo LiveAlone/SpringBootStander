@@ -30,3 +30,4 @@ dependency-reduced-pom.xml
 *.perm
 flyway.properties
 _book/
+src/main/resources/rebel.xml
