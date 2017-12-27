@@ -27,6 +27,6 @@ public class BootDemoApplication {
     @RequestMapping(value = "/index", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public String indexPage(){
-        return "this is test index paging info test docker jenkins config";
+        return "this is test index paging info test docker jenkins config 2222222222";
     }
 }
