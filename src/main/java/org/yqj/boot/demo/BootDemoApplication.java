@@ -27,7 +27,7 @@ public class BootDemoApplication {
     @RequestMapping(value = "/", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public String rootPage(){
-        return "this is test root page info";
+        return "this is test root page info this is first lesson content";
     }
 
     @RequestMapping(value = "/index", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
