@@ -24,6 +24,12 @@ public class BootDemoApplication {
                 .run(args);
     }
 
+    @RequestMapping(value = "/", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public String rootPage(){
+        return "this is test root page info";
+    }
+
     @RequestMapping(value = "/index", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public String indexPage(){
