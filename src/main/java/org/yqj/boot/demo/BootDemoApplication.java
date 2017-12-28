@@ -27,7 +27,7 @@ public class BootDemoApplication {
     @RequestMapping(value = "/", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public String rootPage(){
-        return "this is first run from jenkins github docker He 1";
+        return "this is first run from jenkins github docker He 2";
     }
 
     @RequestMapping(value = "/index", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
