@@ -5,6 +5,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.net.InetAddress;
+
 /**
  * Created by yaoqijun.
  * Date:2016-04-27

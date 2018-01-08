@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
 /**
  * Created by yaoqijun.
  * Date:2016-04-27
@@ -26,8 +29,8 @@ public class BootDemoApplication {
 
     @RequestMapping(value = "/", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public String rootPage(){
-        return "this is test root page info";
+    public String rootPage() throws UnknownHostException{
+        return "host is " + InetAddress.getLocalHost().getHostName() + " with ip address " + InetAddress.getLocalHost().getHostAddress();
     }
 
     @RequestMapping(value = "/index", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
