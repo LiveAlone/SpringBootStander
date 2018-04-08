@@ -15,7 +15,7 @@ import java.net.InetAddress;
  */
 @Component
 @Slf4j
-public class RunCommanLine implements CommandLineRunner{
+public class RunCommandLine implements CommandLineRunner{
 
     public void run(String... args) throws Exception {
         log.info(" command info run");
