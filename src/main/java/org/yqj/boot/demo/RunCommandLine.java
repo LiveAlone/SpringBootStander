@@ -19,7 +19,7 @@ public class RunCommandLine implements CommandLineRunner{
     @Override
     public void run(String... args) throws Exception {
         log.info(" command info run");
-        System.out.println("now command line run ");
-        System.out.println("args content is " + Lists.newArrayList(args).toString());
+        log.warn("now command line run ");
+        log.warn("args content is " + Lists.newArrayList(args).toString());
     }
 }
