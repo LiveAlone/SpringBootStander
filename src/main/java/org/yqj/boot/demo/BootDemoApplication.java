@@ -3,10 +3,11 @@ package org.yqj.boot.demo;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.http.MediaType;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+import org.yqj.boot.demo.model.Config;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -19,7 +20,7 @@ import java.net.UnknownHostException;
  * Email: yaoqijunmail@foxmail.com
  */
 @SpringBootApplication
-@Controller
+@RestController
 public class BootDemoApplication {
     public static void main(String[] args) {
         new SpringApplicationBuilder()
@@ -28,15 +29,21 @@ public class BootDemoApplication {
                 .run(args);
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/api/health", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public String rootPage() throws UnknownHostException{
         return "host is " + InetAddress.getLocalHost().getHostName() + " with ip address " + InetAddress.getLocalHost().getHostAddress();
     }
 
-    @RequestMapping(value = "/index", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/api/info", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public String indexPage(){
         return "this is test index paging info test docker jenkins config 2222222222";
+    }
+
+    @RequestMapping(value = "/api/config", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public Config config() throws UnknownHostException{
+        return new Config(InetAddress.getLocalHost().getHostName(), InetAddress.getLocalHost().getHostAddress());
     }
 }
