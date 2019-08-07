@@ -8,16 +8,16 @@ import lombok.NoArgsConstructor;
  * Description:
  *
  * @author yaoqijun
- * @date 2019-08-06
+ * @date 2019-08-07
  * Email: yaoqijunmail@foxmail.com
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Config {
+public class AddressResponse {
 
     private String hostname;
 
-    private String address;
+    private String hostAddress;
 
 }
