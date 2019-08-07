@@ -97,8 +97,15 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring.boot.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
                 <configuration>
-                    <executable>true</executable>
+                    <mainClass>org.yqj.xhs.backend.BootDemoApplication</mainClass>
                 </configuration>
             </plugin>
             <plugin>
