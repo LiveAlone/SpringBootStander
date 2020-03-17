@@ -7,8 +7,10 @@ import org.springframework.web.bind.annotation.RestController;
 import org.yqj.boot.demo.model.AddressResponse;
 import org.yqj.boot.demo.model.BaseResponse;
 
+import javax.servlet.http.HttpServletRequest;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.util.Arrays;
 
 /**
  * Description:
@@ -20,8 +22,12 @@ import java.net.UnknownHostException;
 @RestController
 public class LocalRestController {
 
-    @RequestMapping(value = "/health", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public BaseResponse health(){
+    @RequestMapping(value = "/health", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    public BaseResponse health(HttpServletRequest request){
+        request.getParameterMap().forEach((key, value) -> {
+            System.out.println("key : " + key);
+            System.out.println("value : " + Arrays.asList(value).toString());
+        });
         return BaseResponse.successResponse("success");
     }
 
