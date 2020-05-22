@@ -4,6 +4,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 /**
  * Description:
  *
@@ -14,9 +17,8 @@ import org.springframework.stereotype.Component;
 @Component
 @Slf4j
 public class RunCommandLine implements CommandLineRunner{
-
     @Override
     public void run(String... args) throws Exception {
+        log.info("run command line generate .......");
     }
-
 }
