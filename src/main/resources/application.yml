@@ -1,3 +1,6 @@
 logging:
   level:
     root: INFO
+
+rocketmq:
+  namesrvAddr: 10.4.30.12:9876
