@@ -31,7 +31,6 @@ public class LocalRestController {
         return BaseResponse.successResponse("success");
     }
 
-
     @RequestMapping(value = "/address", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public BaseResponse address() throws UnknownHostException {
         return BaseResponse.successResponse(new AddressResponse(InetAddress.getLocalHost().getHostName(), InetAddress.getLocalHost().getHostAddress()));
