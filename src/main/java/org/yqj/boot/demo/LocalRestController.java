@@ -22,7 +22,7 @@ import java.util.Arrays;
 @RestController
 public class LocalRestController {
 
-    @RequestMapping(value = "/health", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/health", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public BaseResponse health(HttpServletRequest request){
         request.getParameterMap().forEach((key, value) -> {
             System.out.println("key : " + key);
